@@ -1,0 +1,143 @@
+// Mobile Menu
+.mobile-menu {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+
+  width: 100%;
+  max-width: 480px;
+  min-height: 100vh;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+
+  background-color: $primary-bg-color;
+  box-shadow: $mobile-menu-shadow;
+  transition: transform $modal-animation;
+
+  &--is-open {
+    transform: translate(-50%, 0);
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
+
+// Mobile Menu Button
+.mobile-menu-btn {
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  right: 15px;
+
+  padding: 0;
+
+  fill: $title-text-color;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: fill $animation;
+
+  &:hover,
+  &:focus {
+    fill: $accent-color;
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.mobile-menu-btn__icon {
+  .mobile-menu-btn--is-open & {
+    display: none;
+  }
+}
+
+.mobile-menu-btn__icon-close {
+  display: none;
+
+  .mobile-menu-btn--is-open & {
+    display: block;
+  }
+}
+
+// Mobile Site Navigation
+.mobile-site-nav {
+  @extend %list;
+  margin-bottom: 64px;
+}
+
+.mobile-site-nav__item:not(:last-child),
+.mobile-contacts__item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.mobile-site-nav__link {
+  @extend %link;
+  font-size: 40px;
+  line-height: 1.175;
+
+  &--active {
+    color: $accent-color;
+  }
+}
+
+// Mobile Contacts
+.mobile-contacts {
+  @extend %list;
+  margin-top: auto;
+  margin-bottom: 64px;
+}
+
+.mobile-contacts__tel {
+  @extend %link;
+  font-size: 34px;
+  line-height: 1.176;
+  color: $accent-color;
+}
+
+.mobile-contacts__mail {
+  @extend %link;
+  font-size: 24px;
+  line-height: 1.166;
+  color: $primary-text-color;
+}
+
+// Mobile Social Links
+.mobile-social {
+  @extend %list;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mobile-social__item {
+  position: relative;
+
+  &:not(:last-child) {
+    margin-right: 20px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0px;
+      right: -10px;
+      width: 22px;
+      height: 1px;
+      display: block;
+      transform-origin: right;
+      transform: rotate(-90deg);
+      background-color: rgba(33, 33, 33, 0.2);
+    }
+  }
+}
+
+.mobile-social__link {
+  @extend %link;
+  font-size: 18px;
+  line-height: 1.22;
+  color: $accent-color;
+}

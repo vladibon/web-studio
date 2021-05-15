@@ -1,0 +1,81 @@
+.hero {
+  max-width: $mobile;
+  min-height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 118px;
+  padding-bottom: 118px;
+
+  background-color: $hero-bg-color;
+  background-image: linear-gradient($hero-overlay, $hero-overlay),
+    url("../images/hero/hero-480.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    background-image: linear-gradient($hero-overlay, $hero-overlay),
+      url("../images/hero/hero-480@2x.jpg");
+  }
+
+  @media screen and (min-width: $tablet) {
+    max-width: $tablet;
+
+    background-image: linear-gradient($hero-overlay, $hero-overlay),
+      url("../images/hero/hero-768.jpg");
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient($hero-overlay, $hero-overlay),
+        url("../images/hero/hero-768@2x.jpg");
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    max-width: 1600px;
+    min-height: 600px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+
+    background-image: linear-gradient($hero-overlay, $hero-overlay),
+      url("../images/hero/hero-1600.jpg");
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: linear-gradient($hero-overlay, $hero-overlay),
+        url("../images/hero/hero-1600@2x.jpg");
+    }
+  }
+}
+
+.hero__content {
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  @media screen and (min-width: $desktop) {
+    max-width: 696px;
+  }
+}
+
+.hero__heading {
+  margin-top: 0;
+  margin-bottom: 30px;
+
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 1.62;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $white-text-color;
+
+  @media screen and (min-width: $desktop) {
+    font-size: 44px;
+    line-height: 1.36;
+  }
+}

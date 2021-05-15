@@ -1,0 +1,80 @@
+p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.page {
+  font-family: $main-font;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: $primary-text-color;
+  background-color: $primary-bg-color;
+
+  &--modal-open {
+    overflow: hidden;
+  }
+}
+
+.section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media screen and (min-width: $desktop) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+
+  &--team {
+    background-color: $accent-bg-color;
+  }
+
+  &--service {
+    padding-top: 0;
+
+    @media screen and (max-width: $desktop - 1px) {
+      display: none;
+    }
+  }
+}
+
+.section__heading {
+  margin-top: 0;
+  margin-bottom: 30px;
+
+  font-size: 28px;
+  line-height: 1.17;
+  text-align: center;
+  color: $title-text-color;
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 50px;
+
+    font-size: 36px;
+  }
+}
+
+.btn-main {
+  @extend %btn;
+  padding: 10px 22px;
+  min-width: 200px;
+  min-height: 50px;
+
+  font-weight: 700;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: $white-text-color;
+  background-color: $accent-color;
+  box-shadow: $main-btn-shadow;
+
+  &:hover,
+  &:focus {
+    background-color: $accent-btn-color;
+  }
+}

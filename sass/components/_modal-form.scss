@@ -1,0 +1,135 @@
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-form__title {
+  margin-bottom: 12px;
+
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+
+  color: $title-text-color;
+
+  @media screen and (min-width: $desktop) {
+    line-height: 1.15;
+  }
+}
+
+.modal-form__content {
+  width: 100%;
+  margin-bottom: 10px;
+
+  &--comment {
+    margin-bottom: 20px;
+  }
+}
+
+.modal-form__label {
+  margin-bottom: 4px;
+  display: block;
+
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+}
+
+.modal-form__field {
+  position: relative;
+  display: block;
+}
+
+.modal-form__input {
+  width: 100%;
+  padding-top: 11px;
+  padding-right: 12px;
+  padding-bottom: 11px;
+  padding-left: 42px;
+  display: block;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+  transition: border-color $animation;
+
+  &--comment {
+    min-height: 120px;
+    padding: 12px 16px;
+    resize: none;
+  }
+
+  &::placeholder {
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+  }
+
+  &:focus {
+    border-color: $accent-color;
+  }
+}
+
+.modal-form__icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+
+  fill: $title-text-color;
+  transition: fill $animation;
+
+  .modal-form__input:focus + & {
+    fill: $accent-color;
+  }
+}
+
+// Agreement
+.agree {
+  position: relative;
+
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: $desktop - 1px) {
+    font-size: 12px;
+    line-height: 1.166;
+  }
+}
+
+.agree__icon {
+  min-width: 16px;
+  height: 15px;
+  margin-right: 8px;
+  display: inline-block;
+
+  border: 1px solid $title-text-color;
+  border-radius: 2px;
+  transition: background-color $animation, border-color $animation;
+
+  .agree__checkbox:focus + & {
+    box-shadow: 0 0 0 2px $accent-color;
+  }
+
+  .agree__checkbox:checked + & {
+    background-color: $accent-color;
+    border-color: $accent-color;
+  }
+}
+
+.agree__icon-check {
+  position: absolute;
+  opacity: 0;
+  transition: opacity $animation;
+
+  .agree__checkbox:checked ~ & {
+    opacity: 1;
+  }
+}
+
+.agree__link {
+  color: $accent-color;
+}

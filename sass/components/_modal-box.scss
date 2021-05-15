@@ -1,0 +1,82 @@
+.backdrop {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: $backdrop-color;
+  overflow-y: scroll;
+  visibility: visible;
+  opacity: 1;
+  transition: visibility $modal-animation, opacity $modal-animation;
+
+  &--is-hidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  min-height: 610px;
+  padding: 40px;
+
+  background-color: $primary-bg-color;
+  box-shadow: $shadow;
+  border-radius: 4px;
+  transform: translate(0, 0) scaleX(1);
+  transition: transform $modal-animation;
+
+  @media screen and (max-width: $mobile - 1px) {
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: $mobile) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scaleX(1);
+  }
+
+  @media screen and (min-width: $desktop) {
+    max-width: 528px;
+    min-height: 580px;
+  }
+
+  .backdrop--is-hidden & {
+    transform: translate(0, 50%) scaleX(0);
+
+    @media screen and (min-width: $mobile) {
+      transform: translate(-50%, 0) scaleX(0);
+    }
+  }
+}
+
+.modal__btn-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  @extend %flexCenter;
+
+  fill: $black-logo-color;
+  background-color: inherit;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: fill $animation;
+
+  &:hover,
+  &:focus {
+    fill: $accent-color;
+  }
+}

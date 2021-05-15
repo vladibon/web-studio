@@ -1,0 +1,30 @@
+.service {
+  @extend %list;
+  display: flex;
+  flex-wrap: wrap;
+  margin: -$grid-item-gap / 2;
+}
+
+.service__item {
+  position: relative;
+
+  flex-basis: calc((100% - 3 * #{$grid-item-gap}) / 3);
+  margin: $grid-item-gap / 2;
+}
+
+.service__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  min-height: 70px;
+  @extend %flexCenter;
+  background-color: $service-overlay;
+}
+
+.service__title {
+  @extend %title;
+  margin-bottom: 0;
+  color: $white-text-color;
+}

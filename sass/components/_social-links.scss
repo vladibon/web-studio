@@ -1,0 +1,37 @@
+.social {
+  @extend %list;
+  @extend %flexCenter;
+  flex-wrap: wrap;
+}
+
+.social__item {
+  @media screen and (min-width: 236px) {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}
+
+.social__link {
+  width: 44px;
+  height: 44px;
+  @extend %flexCenter;
+
+  text-decoration: none;
+  fill: $icon-color;
+  background-color: inherit;
+  border-radius: 50%;
+  outline: none;
+  transition: fill $animation, background-color $animation;
+
+  &--white {
+    fill: $white-text-color;
+    background-color: $footer-bg-icon-color;
+  }
+
+  &:hover,
+  &:focus {
+    fill: $white-text-color;
+    background-color: $accent-color;
+  }
+}

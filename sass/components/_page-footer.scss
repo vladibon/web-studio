@@ -1,0 +1,147 @@
+.page-footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: $page-footer-bg-color;
+}
+
+.page-footer__container {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    align-items: baseline;
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.page-footer__logo {
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.page-footer__social-links {
+  @media screen and (max-width: $tablet - 1px) {
+    margin-bottom: 60px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    flex-basis: 50%;
+  }
+
+  @media screen and (min-width: $desktop) {
+    flex-basis: 206px;
+  }
+}
+
+.page-footer__title {
+  @extend %title;
+  margin-bottom: 20px;
+  display: block;
+  color: $white-text-color;
+
+  @media screen and (max-width: $desktop - 1px) {
+    text-align: center;
+  }
+}
+
+// Footer Contacts
+.contacts {
+  @media screen and (min-width: $tablet) {
+    flex-basis: 50%;
+  }
+
+  @media screen and (max-width: $desktop - 1px) {
+    margin-bottom: 60px;
+    text-align: center;
+  }
+
+  @media screen and (min-width: $desktop) {
+    flex-basis: 270px;
+    margin-right: 30px;
+  }
+}
+
+.contacts__list {
+  font-style: inherit;
+}
+
+.contacts__link {
+  display: block;
+  text-decoration: none;
+  color: $transparent-text-color;
+  transition: color $animation;
+
+  &--white {
+    color: $white-text-color;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+// Subscription Form
+.subscription-form {
+  @media screen and (min-width: $tablet) {
+    flex-basis: 450px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    flex-basis: 570px;
+    margin-left: auto;
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+.subscription-form__field {
+  @media screen and (max-width: $desktop - 1px) {
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-right: 12px;
+    flex-grow: 1;
+  }
+}
+
+.subscription-form__input {
+  width: 100%;
+  min-height: 50px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  color: $white-text-color;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  box-shadow: $main-btn-shadow;
+  outline: none;
+
+  &::placeholder {
+    font-style: 16px;
+    line-height: 1.25;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  &:focus {
+    border-color: $accent-color;
+  }
+}
+
+.subscription-form__btn-main {
+  @extend %flexCenter;
+
+  @media screen and (max-width: $desktop - 1px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
