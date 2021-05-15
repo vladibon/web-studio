@@ -2,18 +2,24 @@
 @import "./utils/placeholders";
 @import "./utils/mixins";
 @import "./utils/visually-hidden";
-@import "./components/common";
-@import "./components/container";
+
+@import "./base/common";
+
 @import "./components/logo";
+@import "./components/buttons";
+@import "./components/filter";
 @import "./components/social-links";
-@import "./components/page-header";
 @import "./components/mobile-menu";
-@import "./components/section-hero";
-@import "./components/section-features";
-@import "./components/section-services";
-@import "./components/section-team";
-@import "./components/section-clients";
-@import "./components/section-portfolio";
-@import "./components/page-footer";
 @import "./components/modal-box";
 @import "./components/modal-form";
+
+@import "./layout/container";
+@import "./layout/page-header";
+@import "./layout/page-footer";
+@import "./layout/sections";
+@import "./layout/section-hero";
+@import "./layout/section-features";
+@import "./layout/section-services";
+@import "./layout/section-team";
+@import "./layout/section-clients";
+@import "./layout/section-portfolio";

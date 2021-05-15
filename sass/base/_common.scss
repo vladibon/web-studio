@@ -1,0 +1,39 @@
+p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.page {
+  font-family: $main-font;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: $primary-text-color;
+  background-color: $primary-bg-color;
+
+  &--modal-open {
+    overflow: hidden;
+  }
+}
+
+.section__heading {
+  margin-top: 0;
+  margin-bottom: 30px;
+
+  font-size: 28px;
+  line-height: 1.17;
+  text-align: center;
+  color: $title-text-color;
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 50px;
+
+    font-size: 36px;
+  }
+}
