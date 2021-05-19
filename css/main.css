@@ -605,24 +605,25 @@ img {
 }
 
 .container {
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media screen and (min-width: 480px) {
   .container {
-    width: 480px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 @media screen and (min-width: 768px) {
   .container {
-    width: 768px;
+    max-width: 768px;
   }
 }
 @media screen and (min-width: 1200px) {
   .container {
-    width: 1200px;
+    max-width: 1200px;
   }
 }
 
@@ -1045,6 +1046,13 @@ img {
   margin-right: auto;
   text-align: center;
 }
+@media screen and (max-width: 479px) {
+  .hero__content {
+    max-width: 390px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
 @media screen and (min-width: 1200px) {
   .hero__content {
     max-width: 696px;
@@ -1095,6 +1103,7 @@ img {
   .feature__item {
     -ms-flex-preferred-size: calc((100% - 4 * 30px) / 4);
         flex-basis: calc((100% - 4 * 30px) / 4);
+    margin: 15px;
   }
 }
 
@@ -1171,6 +1180,7 @@ img {
   .team__item {
     -ms-flex-preferred-size: calc((100% - 4 * 30px) / 4);
         flex-basis: calc((100% - 4 * 30px) / 4);
+    margin: 15px;
   }
 }
 
@@ -1220,10 +1230,10 @@ img {
   .client__item {
     -ms-flex-preferred-size: calc((100% - 2 * 30px) / 2);
         flex-basis: calc((100% - 2 * 30px) / 2);
+    margin: 15px;
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
-    margin: 15px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -1237,6 +1247,7 @@ img {
   .client__item {
     -ms-flex-preferred-size: calc((100% - 6 * 30px) / 6);
         flex-basis: calc((100% - 6 * 30px) / 6);
+    margin: 15px;
   }
 }
 
@@ -1281,6 +1292,7 @@ img {
   .portfolio__item {
     -ms-flex-preferred-size: calc((100% - 3 * 30px) / 3);
         flex-basis: calc((100% - 3 * 30px) / 3);
+    margin: 15px;
   }
 }
 

@@ -31,9 +31,8 @@ img {
   text-align: center;
   color: $title-text-color;
 
-  @media screen and (min-width: $desktop) {
+  @include respond-above($desktop) {
     margin-bottom: 50px;
-
     font-size: 36px;
   }
 }

@@ -5,7 +5,7 @@
 }
 
 .social__item {
-  @media screen and (min-width: 236px) {
+  @include respond-above(236px) {
     &:not(:last-child) {
       margin-right: 10px;
     }

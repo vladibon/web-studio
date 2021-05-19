@@ -1,25 +1,20 @@
 .client {
   @extend %list;
-
-  display: flex;
-  flex-wrap: wrap;
-  margin: -$grid-item-gap / 2;
+  @include grid();
 }
 
 .client__item {
-  @media screen and (max-width: $tablet - 1px) {
-    flex-basis: calc((100% - 2 * #{$grid-item-gap}) / 2);
+  @include respond-below($tablet) {
+    @include grid-item(2);
     flex-grow: 1;
-    margin: $grid-item-gap / 2;
   }
 
-  @media screen and (min-width: $tablet) {
-    flex-basis: calc((100% - 3 * #{$grid-item-gap}) / 3);
-    margin: $grid-item-gap / 2;
+  @include respond-above($tablet) {
+    @include grid-item(3);
   }
 
-  @media screen and (min-width: $desktop) {
-    flex-basis: calc((100% - 6 * #{$grid-item-gap}) / 6);
+  @include respond-above($desktop) {
+    @include grid-item(6);
   }
 }
 

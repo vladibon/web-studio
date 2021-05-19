@@ -13,7 +13,7 @@
 
   color: $title-text-color;
 
-  @media screen and (min-width: $desktop) {
+  @include respond-above($desktop) {
     line-height: 1.15;
   }
 }
@@ -94,7 +94,7 @@
   display: flex;
   align-items: center;
 
-  @media screen and (max-width: $desktop - 1px) {
+  @include respond-below($desktop) {
     font-size: 12px;
     line-height: 1.166;
   }

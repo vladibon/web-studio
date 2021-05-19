@@ -5,18 +5,18 @@
 .page-header__container {
   position: relative;
 
-  @media screen and (min-width: $tablet) {
+  @include respond-above($tablet) {
     display: flex;
     justify-content: space-between;
   }
 }
 
 .page-header__logo {
-  @media screen and (min-width: $tablet) {
+  @include respond-above($tablet) {
     margin-right: 88px;
   }
 
-  @media screen and (min-width: $desktop) {
+  @include respond-above($desktop) {
     margin-right: 93px;
   }
 }
@@ -32,7 +32,7 @@
   @extend %list;
   display: flex;
 
-  @media screen and (max-width: $tablet - 1px) {
+  @include respond-below($tablet) {
     display: none;
   }
 }
@@ -71,22 +71,22 @@
   @extend %list;
   display: flex;
 
-  @media screen and (max-width: $tablet - 1px) {
+  @include respond-below($tablet) {
     display: none;
   }
 
-  @media screen and (max-width: $desktop - 1px) {
+  @include respond-below($desktop) {
     flex-direction: column;
     justify-content: center;
   }
 
-  @media screen and (min-width: $desktop) {
+  @include respond-above($desktop) {
     align-items: center;
   }
 }
 
 .header-contacts__item {
-  @media screen and (min-width: $desktop) {
+  @include respond-above($desktop) {
     &:not(:last-child) {
       margin-right: 30px;
     }
@@ -103,7 +103,7 @@
   color: $primary-text-color;
   fill: currentColor;
 
-  @media screen and (max-width: $desktop - 1px) {
+  @include respond-below($desktop) {
     font-size: 12px;
     line-height: 1.166;
   }
@@ -114,7 +114,7 @@
   width: 14px;
   height: 10px;
 
-  @media screen and (min-width: $desktop) {
+  @include respond-above($desktop) {
     margin-right: 10px;
     width: 16px;
     height: 12px;
@@ -126,7 +126,7 @@
   width: 10px;
   height: 14px;
 
-  @media screen and (min-width: $desktop) {
+  @include respond-above($desktop) {
     margin-right: 10px;
     width: 12px;
     height: 16px;

@@ -20,7 +20,7 @@
       url("../images/hero/hero-480@2x.jpg");
   }
 
-  @media screen and (min-width: $tablet) {
+  @include respond-above($tablet) {
     max-width: $tablet;
 
     background-image: linear-gradient($hero-overlay, $hero-overlay),
@@ -34,7 +34,7 @@
     }
   }
 
-  @media screen and (min-width: $desktop) {
+  @include respond-above($desktop) {
     max-width: 1600px;
     min-height: 600px;
     padding-top: 200px;
@@ -58,7 +58,13 @@
   margin-right: auto;
   text-align: center;
 
-  @media screen and (min-width: $desktop) {
+  @include respond-below($mobile) {
+    max-width: 390px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  @include respond-above($desktop) {
     max-width: 696px;
   }
 }
@@ -74,7 +80,7 @@
   text-transform: uppercase;
   color: $white-text-color;
 
-  @media screen and (min-width: $desktop) {
+  @include respond-above($desktop) {
     font-size: 44px;
     line-height: 1.36;
   }

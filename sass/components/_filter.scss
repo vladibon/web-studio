@@ -4,16 +4,16 @@
   display: flex;
   flex-wrap: wrap;
 
-  @media screen and (max-width: $tablet - 1px) {
+  @include respond-below($tablet) {
     margin-bottom: 25px;
   }
 
-  @media screen and (min-width: $tablet) {
+  @include respond-above($tablet) {
     margin-bottom: 15px;
     justify-content: center;
   }
 
-  @media screen and (min-width: $desktop) {
+  @include respond-above($desktop) {
     margin-bottom: 35px;
   }
 }

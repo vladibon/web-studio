@@ -1,28 +1,24 @@
-// Portfolio
 .portfolio {
   @extend %list;
 
-  @media screen and (min-width: $tablet) {
-    display: flex;
-    flex-wrap: wrap;
-    margin: -$grid-item-gap / 2;
+  @include respond-above($tablet) {
+    @include grid();
   }
 }
 
 .portfolio__item {
-  @media screen and (max-width: $tablet - 1px) {
+  @include respond-below($tablet) {
     &:not(:last-child) {
       margin-bottom: $grid-item-gap;
     }
   }
 
-  @media screen and (min-width: $tablet) {
-    flex-basis: calc((100% - 2 * #{$grid-item-gap}) / 2);
-    margin: $grid-item-gap / 2;
+  @include respond-above($tablet) {
+    @include grid-item(2);
   }
 
-  @media screen and (min-width: $desktop) {
-    flex-basis: calc((100% - 3 * #{$grid-item-gap}) / 3);
+  @include respond-above($desktop) {
+    @include grid-item(3);
   }
 }
 
@@ -88,22 +84,22 @@
   transform: translateY(100%);
   transition: transform $animation;
 
-  @media screen and (min-width: 330px) and (max-width: $mobile - 1px) {
+  @include respond-between(330px, $mobile) {
     padding-top: 40px;
     padding-bottom: 40px;
   }
 
-  @media screen and (min-width: $mobile) {
+  @include respond-above($mobile) {
     padding-top: 77px;
     padding-bottom: 77px;
   }
 
-  @media screen and (min-width: $tablet) {
+  @include respond-above($tablet) {
     padding-top: 49px;
     padding-bottom: 49px;
   }
 
-  @media screen and (min-width: $desktop) {
+  @include respond-above($desktop) {
     padding-top: 63px;
     padding-bottom: 63px;
   }

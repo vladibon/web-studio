@@ -33,18 +33,18 @@
   transform: translate(0, 0) scaleX(1);
   transition: transform $modal-animation;
 
-  @media screen and (max-width: $mobile - 1px) {
+  @include respond-below($mobile) {
     margin: 0 auto;
   }
 
-  @media screen and (min-width: $mobile) {
+  @include respond-above($mobile) {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scaleX(1);
   }
 
-  @media screen and (min-width: $desktop) {
+  @include respond-above($desktop) {
     max-width: 528px;
     min-height: 580px;
   }
@@ -52,7 +52,7 @@
   .backdrop--is-hidden & {
     transform: translate(0, 50%) scaleX(0);
 
-    @media screen and (min-width: $mobile) {
+    @include respond-above($mobile) {
       transform: translate(-50%, 0) scaleX(0);
     }
   }

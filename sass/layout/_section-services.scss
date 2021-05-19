@@ -1,15 +1,11 @@
 .service {
   @extend %list;
-  display: flex;
-  flex-wrap: wrap;
-  margin: -$grid-item-gap / 2;
+  @include grid();
 }
 
 .service__item {
   position: relative;
-
-  flex-basis: calc((100% - 3 * #{$grid-item-gap}) / 3);
-  margin: $grid-item-gap / 2;
+  @include grid-item(3);
 }
 
 .service__overlay {

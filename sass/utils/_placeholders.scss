@@ -5,13 +5,6 @@
   list-style: none;
 }
 
-// %grid {
-//   @extend %list;
-//   display: flex;
-//   flex-wrap: wrap;
-//   margin: -$grid-item-gap / 2;
-// }
-
 %flexCenter {
   display: flex;
   justify-content: center;
