@@ -17,7 +17,8 @@ img {
   color: $primary-text-color;
   background-color: $primary-bg-color;
 
-  &--modal-open {
+  &--modal-open,
+  &--menu-open {
     overflow: hidden;
   }
 }

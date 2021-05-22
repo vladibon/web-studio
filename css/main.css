@@ -78,7 +78,7 @@ img {
   color: #757575;
   background-color: #ffffff;
 }
-.page--modal-open {
+.page--modal-open, .page--menu-open {
   overflow: hidden;
 }
 
@@ -217,7 +217,7 @@ img {
 }
 
 .mobile-menu {
-  position: absolute;
+  position: fixed;
   z-index: 1;
   top: 0;
   left: 50%;
