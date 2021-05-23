@@ -1,4 +1,4 @@
-.portfolio, .client, .team, .service, .feature, .header-contacts, .site-nav__list, .mobile-social, .mobile-contacts, .mobile-site-nav, .social, .filter {
+.portfolio, .client, .team, .service, .feature, .header-contacts, .site-nav__list, .mobile-contacts, .mobile-site-nav, .social, .filter {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
@@ -25,7 +25,7 @@
   text-transform: uppercase;
 }
 
-.header-contacts__link, .site-nav__link, .mobile-social__link, .mobile-contacts__mail, .mobile-contacts__tel, .mobile-site-nav__link {
+.header-contacts__link, .site-nav__link, .mobile-contacts__link, .mobile-site-nav__link {
   font-weight: 500;
   letter-spacing: 0.02em;
   text-decoration: none;
@@ -33,7 +33,7 @@
   -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.header-contacts__link:hover, .site-nav__link:hover, .mobile-social__link:hover, .mobile-contacts__mail:hover, .mobile-contacts__tel:hover, .mobile-site-nav__link:hover, .header-contacts__link:focus, .site-nav__link:focus, .mobile-social__link:focus, .mobile-contacts__mail:focus, .mobile-contacts__tel:focus, .mobile-site-nav__link:focus {
+.header-contacts__link:hover, .site-nav__link:hover, .mobile-contacts__link:hover, .mobile-site-nav__link:hover, .header-contacts__link:focus, .site-nav__link:focus, .mobile-contacts__link:focus, .mobile-site-nav__link:focus {
   color: #2196f3;
 }
 
@@ -216,40 +216,71 @@ img {
   background-color: #2196f3;
 }
 
-.mobile-menu {
+.mobile-backdrop {
   position: fixed;
   z-index: 1;
   top: 0;
-  left: 50%;
-  -webkit-transform: translate(-50%, -100%);
-          transform: translate(-50%, -100%);
-  width: 100%;
-  max-width: 480px;
-  min-height: 100vh;
-  padding: 48px 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  overflow-y: scroll;
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 370ms cubic-bezier(0.4, 0, 0.2, 1), opacity 370ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: visibility 370ms cubic-bezier(0.4, 0, 0.2, 1), opacity 370ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-backdrop--is-open {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: initial;
+}
+@media screen and (min-width: 768px) {
+  .mobile-backdrop {
+    display: none;
+  }
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  padding-top: 59px;
+  padding-bottom: 36px;
+  padding-left: 40px;
+  padding-right: 40px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   background-color: #ffffff;
   -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 1px 3px rgba(0, 0, 0, 0.16);
           box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 1px 3px rgba(0, 0, 0, 0.16);
+  border-bottom-left-radius: 4px;
   -webkit-transition: -webkit-transform 370ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: -webkit-transform 370ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 370ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 370ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 370ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.mobile-menu--is-open {
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-}
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 480px) {
   .mobile-menu {
-    display: none;
+    width: calc(286px + (100% - 480px) / 2);
   }
+}
+.mobile-backdrop--is-open .mobile-menu {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
 }
 
 .mobile-menu-btn {
@@ -257,6 +288,8 @@ img {
   z-index: 2;
   top: 10px;
   right: 15px;
+  width: 40px;
+  height: 40px;
   padding: 0;
   fill: #212121;
   background-color: transparent;
@@ -286,72 +319,53 @@ img {
 }
 
 .mobile-site-nav {
-  margin-bottom: 64px;
-}
-
-.mobile-site-nav__item:not(:last-child),
-.mobile-contacts__item:not(:last-child) {
   margin-bottom: 32px;
+}
+.mobile-site-nav::before {
+  content: "";
+  position: absolute;
+  top: 59px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  display: block;
+  background-color: #ececec;
 }
 
 .mobile-site-nav__link {
-  font-size: 40px;
-  line-height: 1.175;
+  padding-top: 16px;
+  padding-bottom: 14px;
+  display: inline-block;
+  font-size: 20px;
+  line-height: 1.176;
 }
 .mobile-site-nav__link--active {
+  position: relative;
   color: #2196f3;
+}
+.mobile-site-nav__link--active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  display: block;
+  background-color: #2196f3;
+  border-radius: 2px;
 }
 
 .mobile-contacts {
-  margin-top: auto;
-  margin-bottom: 64px;
+  margin-bottom: 10px;
 }
 
-.mobile-contacts__tel {
-  font-size: 34px;
-  line-height: 1.176;
-  color: #2196f3;
-}
-
-.mobile-contacts__mail {
-  font-size: 24px;
-  line-height: 1.166;
-  color: #757575;
-}
-
-.mobile-social {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.mobile-social__item {
-  position: relative;
-}
-.mobile-social__item:not(:last-child) {
-  margin-right: 20px;
-}
-.mobile-social__item:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  top: 0px;
-  right: -10px;
-  width: 22px;
-  height: 1px;
+.mobile-contacts__link {
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: block;
-  -webkit-transform-origin: right;
-          transform-origin: right;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  background-color: rgba(33, 33, 33, 0.2);
-}
-
-.mobile-social__link {
-  font-size: 18px;
-  line-height: 1.22;
-  color: #2196f3;
+  font-size: 16px;
+  line-height: 1.176;
+  color: #757575;
 }
 
 .backdrop {
@@ -359,8 +373,8 @@ img {
   z-index: 3;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
   overflow-y: scroll;
   visibility: visible;
@@ -694,6 +708,7 @@ img {
 .site-nav__link--active::after {
   content: "";
   position: absolute;
+  left: 0;
   bottom: -1px;
   width: 100%;
   height: 4px;

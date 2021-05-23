@@ -9,7 +9,7 @@
     menuBtnRef.classList.toggle("mobile-menu-btn--is-open");
     menuBtnRef.setAttribute("aria-expanded", !expanded);
 
-    mobileMenuRef.classList.toggle("mobile-menu--is-open");
+    mobileMenuRef.classList.toggle("mobile-backdrop--is-open");
     page.classList.toggle("page--menu-open");
   });
 })();
