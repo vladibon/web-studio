@@ -17,8 +17,13 @@ img {
   color: $primary-text-color;
   background-color: $primary-bg-color;
 
-  &--modal-open,
-  &--menu-open {
+  @include respond-below($tablet) {
+    &--menu-open {
+      overflow: hidden;
+    }
+  }
+
+  &--modal-open {
     overflow: hidden;
   }
 }

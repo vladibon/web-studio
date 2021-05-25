@@ -78,7 +78,12 @@ img {
   color: #757575;
   background-color: #ffffff;
 }
-.page--modal-open, .page--menu-open {
+@media screen and (max-width: 767px) {
+  .page--menu-open {
+    overflow: hidden;
+  }
+}
+.page--modal-open {
   overflow: hidden;
 }
 
