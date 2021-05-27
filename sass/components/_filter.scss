@@ -36,12 +36,13 @@
   letter-spacing: 0.03em;
   color: $title-text-color;
   background-color: $accent-bg-color;
-  outline: none;
+  transform: scale(1);
 
   &:hover,
   &:focus {
     color: $white-text-color;
     background-color: $accent-color;
     box-shadow: $filter-btn-shadow;
+    transform: scale(1.04);
   }
 }

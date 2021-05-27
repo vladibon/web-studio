@@ -10,9 +10,11 @@
   color: $white-text-color;
   background-color: $accent-color;
   box-shadow: $main-btn-shadow;
+  transform: scale(1);
 
   &:hover,
   &:focus {
     background-color: $accent-btn-color;
+    transform: scale(1.04);
   }
 }

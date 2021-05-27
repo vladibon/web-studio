@@ -81,7 +81,7 @@
   padding-right: 24px;
 
   background-color: $project-overlay;
-  transform: translateY(100%);
+  transform: translateY(101%);
   transition: transform $animation;
 
   @include respond-between(330px, $mobile) {

@@ -38,5 +38,7 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: color $animation, background-color $animation, box-shadow $animation;
+  outline: none;
+  transition: color $animation, background-color $animation, box-shadow $animation,
+    transform $animation;
 }

@@ -22,7 +22,8 @@
   background-color: inherit;
   border-radius: 50%;
   outline: none;
-  transition: fill $animation, background-color $animation;
+  transform: scale(1);
+  transition: fill $animation, background-color $animation, transform $animation;
 
   &--white {
     fill: $white-text-color;
@@ -33,5 +34,6 @@
   &:focus {
     fill: $white-text-color;
     background-color: $accent-color;
+    transform: scale(1.1);
   }
 }

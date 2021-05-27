@@ -73,10 +73,12 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
-  transition: fill $animation;
+  transform: scale(1);
+  transition: fill $animation, transform $animation;
 
   &:hover,
   &:focus {
     fill: $accent-color;
+    transform: scale(1.1);
   }
 }
