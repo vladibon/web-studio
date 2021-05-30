@@ -25,13 +25,16 @@
   }
 }
 
+.mobile-backdrop__container {
+  position: relative;
+}
+
 // Mobile Menu
 .mobile-menu {
   position: absolute;
   top: 0;
   right: 0;
-  transform-origin: right;
-  transform: scaleX(0);
+  transform: translateX(70%);
 
   padding-top: 59px;
   padding-bottom: 36px;
@@ -46,12 +49,8 @@
   border-bottom-left-radius: 4px;
   transition: transform $modal-animation;
 
-  @include respond-above($mobile) {
-    width: calc(286px + (100% - #{$mobile}) / 2);
-  }
-
   .mobile-backdrop--is-open & {
-    transform: scaleX(1);
+    transform: translateX(0);
   }
 }
 

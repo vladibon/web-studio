@@ -261,14 +261,16 @@ img {
   }
 }
 
+.mobile-backdrop__container {
+  position: relative;
+}
+
 .mobile-menu {
   position: absolute;
   top: 0;
   right: 0;
-  -webkit-transform-origin: right;
-          transform-origin: right;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
+  -webkit-transform: translateX(70%);
+          transform: translateX(70%);
   padding-top: 59px;
   padding-bottom: 36px;
   padding-left: 40px;
@@ -292,14 +294,9 @@ img {
   transition: transform 370ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 370ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 370ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-@media screen and (min-width: 480px) {
-  .mobile-menu {
-    width: calc(286px + (100% - 480px) / 2);
-  }
-}
 .mobile-backdrop--is-open .mobile-menu {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
 .mobile-menu-btn {
