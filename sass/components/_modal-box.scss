@@ -39,12 +39,18 @@
 
   @include respond-above($mobile) {
     position: absolute;
-    top: 50%;
+    top: 94px;
     left: 50%;
-    transform: translate(-50%, -50%) scaleX(1);
+    transform: translate(-50%, 0) scaleX(1);
+  }
+
+  @include respond-above($tablet) {
+    top: 208px;
   }
 
   @include respond-above($desktop) {
+    top: 50%;
+    transform: translate(-50%, -50%) scaleX(1);
     max-width: 528px;
     min-height: 580px;
   }
@@ -53,6 +59,10 @@
     transform: translate(0, 50%) scaleX(0);
 
     @include respond-above($mobile) {
+      transform: translate(-50%, 50%) scaleX(0);
+    }
+
+    @include respond-above($desktop) {
       transform: translate(-50%, 0) scaleX(0);
     }
   }
